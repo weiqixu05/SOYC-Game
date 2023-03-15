@@ -16,10 +16,10 @@ export default class input{
                     this.state = 'holdingCompost';
                     break;
                 case '3': // 3 key
-                    this.state = 'holdingRecycler';
+                    this.state = 'holdingPlastic';
                     break;
                 case '4': // 4 key
-                    this.state = 'holdingPaperRecycler';
+                    this.state = 'holdingPaper';
                     break;
             }
         });
