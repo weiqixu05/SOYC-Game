@@ -3,10 +3,10 @@ export default class input{
         document.addEventListener('keydown', (event) => {
             alert(event.keyCode);
             switch (event.keyCode){
-                case 1: // left arrow key
+                case 37: // left arrow key
                     player.moveLeft();
                     break;
-                case 2: // right arrow key
+                case 39: // right arrow key
                     player.moveRight();
                     break;
             }
@@ -15,12 +15,12 @@ export default class input{
         document.addEventListener('keyup', (event) => {
             alert(event.keyCode);
             switch (event.keyCode){
-                case 1: // left arrow key unheld
+                case 37: // left arrow key unheld
                     if(player.speed < 0){
                         player.stop();
                     }
                     break;
-                case 2: // right arrow key unheld
+                case 39: // right arrow key unheld
                     if (player.speed > 0){
                         player.stop();
                     }
@@ -32,16 +32,16 @@ export default class input{
         document.addEventListener('keydown', (event) => {
             alert(event.keyCode);
             switch (event.keyCode){
-                case 1: // 1 key
+                case 49: // 1 key
                     alert ('garbage');
                     break;
-                case 2: // 2 key
+                case 50: // 2 key
                     alert ('compost');
                     break;
-                case 3: // 3 key
+                case 51: // 3 key
                     alert('recyler');
                     break;
-                case 4: // 4 key
+                case 52: // 4 key
                     alert('paper recycler');
                     break;
             }
