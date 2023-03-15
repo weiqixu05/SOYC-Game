@@ -9,9 +9,21 @@ export default class input{
                 case 39: // right arrow key
                     player.moveRight();
                     break;
+                case 49: // 1 key
+                    alert ('garbage');
+                    break;
+                case 50: // 2 key
+                    alert ('compost');
+                    break;
+                case 51: // 3 key
+                    alert('recyler');
+                    break;
+                case 52: // 4 key
+                    alert('paper recycler');
+                    break;
             }
         });
-
+        
         document.addEventListener('keyup', (event) => {
             alert(event.keyCode);
             switch (event.keyCode){
@@ -24,25 +36,6 @@ export default class input{
                     if (player.speed > 0){
                         player.stop();
                     }
-                    break;
-            }
-        });
-    }
-    constructor(){
-        document.addEventListener('keydown', (event) => {
-            alert(event.keyCode);
-            switch (event.keyCode){
-                case 49: // 1 key
-                    alert ('garbage');
-                    break;
-                case 50: // 2 key
-                    alert ('compost');
-                    break;
-                case 51: // 3 key
-                    alert('recyler');
-                    break;
-                case 52: // 4 key
-                    alert('paper recycler');
                     break;
             }
         });
