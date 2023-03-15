@@ -13,10 +13,10 @@ export default class player{
         this.speed = 0;
 
         this.states = {
-            'holdingGarbage': document.getElementById(), //Player-Garabge image
-            'holdingCompost': document.getElementById(), //Player-Compost image
-            'holdingRecyler': document.getElementById(), //Player-Recylcer image
-            'holdingPaperRecyler': document.getElementById() //Player-PaperRecylcer image
+            'holdingGarbage': document.getElementById('Id'), //Player-Garabge image
+            'holdingCompost': document.getElementById('Id'), //Player-Compost image
+            'holdingRecyler': document.getElementById('Id'), //Player-Recylcer image
+            'holdingPaperRecyler': document.getElementById('Id') //Player-PaperRecylcer image
         }
         this.state = 'holdingGarbage'
         this.image = this.states[this.state]

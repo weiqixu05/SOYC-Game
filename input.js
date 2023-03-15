@@ -10,20 +10,20 @@ export default class input{
                     player.moveRight();
                     break;
                 case 49: // 1 key
-                    alert ('garbage');
+                    this.state = 'holdingGarbage';
                     break;
                 case 50: // 2 key
-                    alert ('compost');
+                    this.state = 'holdingCompost';
                     break;
                 case 51: // 3 key
-                    alert('recyler');
+                    this.state = 'holdingRecycler';
                     break;
                 case 52: // 4 key
-                    alert('paper recycler');
+                    this.state = 'holdingPaperRecycler';
                     break;
             }
         });
-        
+
         document.addEventListener('keyup', (event) => {
             alert(event.keyCode);
             switch (event.keyCode){
