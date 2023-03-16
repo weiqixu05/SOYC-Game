@@ -1,5 +1,9 @@
 import Player from 'src/player';
 import Bin from 'src/bin';
+import garbageitem from './GarbageItem';
+import compostitem from './CompostItem';
+import recylceritem from './RecyclerItem';
+import paperitem from './PaperItem';
 
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
