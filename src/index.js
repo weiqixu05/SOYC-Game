@@ -2,7 +2,7 @@ import Player from 'src/player';
 import Bin from 'src/bin';
 import garbageitem from './GarbageItem';
 import compostitem from './CompostItem';
-import recylceritem from './RecyclerItem';
+import recycleritem from './RecyclerItem';
 import paperitem from './PaperItem';
 
 let canvas=document.getElementById("gameScreen");
