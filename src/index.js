@@ -1,36 +1,16 @@
-import Player from 'src/player';
+
 import Bin from 'src/bin';
-import garbageitem from './GarbageItem';
-import compostitem from './CompostItem';
-import recycleritem from './RecyclerItem';
-import paperitem from './PaperItem';
+
 
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
 
-const GAME_WIDTH = 1920;
-const GAME_HEIGHT = 1080;
+const GAME_WIDTH = 800;
+const GAME_HEIGHT = 600;
 
 ctx.clearRect(0,0,800,600);
 
-let player = new Player(GAME_WIDTH, GAME_HEIGHT);
+ctx.clearRect(0,0,800,600);
 
-player.draw(ctx);
-
-let lastTime = 0;
-
-
-
-function gameloop(timestamp){
-    let deltatime = timestamp - lastTime;
-    lastTime = timestamp
-
-
-    ctx.clearRect(0, 0, 1920, 1080);
-    player.update();
-    player.draw(ctx);
-
-    requestAnimationFrame(gameloop);
-}
-
-gameloop();
+let bin= new Bin(GAME_WIDTH, GAME_HEIGHT);
+bin.draw(ctx);
