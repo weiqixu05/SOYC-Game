@@ -14,20 +14,28 @@ export default class ItemFunc{
         };
         this.speed = 5;
     }
-
     
-    let itemtype = random(compostitem, recylceritem, garbageitem, paperitem);
-    let item = random(itemtype.images);
 
 
     draw(ctx){
         
     }
 
-    update(deltatime){
+    update(deltatime, player){
         if (!deltatime) return;
 
         this.position.y  -= this.speed;
-        
+
+        if ((this.position.y - this.height / 2 <= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
+            //If item and box match up:
+                //item remove
+                //Score increase 
+            //Else:
+                //Lose Heart
+                //Remove from screen
+        } else if (this.position.y - this.height/2 <= 0){
+            //Lose Heart
+            //Remove from screen
+        }        
     }
 }
