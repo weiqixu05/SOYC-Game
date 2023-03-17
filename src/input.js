@@ -4,22 +4,22 @@ export default class input{
             alert(event.key);
             switch (event.key){
                 case 'ArrowLeft': // left arrow key
-                    player.moveLeft();
+                    Player.moveLeft();
                     break;
                 case 'ArrowRight': // right arrow key
-                    player.moveRight();
+                    Player.moveRight();
                     break;
                 case '1': // 1 key
-                    this.state = 'holdingGarbage';
+                    Player.state = 'holdingGarbage';
                     break;
                 case '2': // 2 key
-                    this.state = 'holdingCompost';
+                    Player.state = 'holdingCompost';
                     break;
                 case '3': // 3 key
-                    this.state = 'holdingPlastic';
+                    Player.state = 'holdingPlastic';
                     break;
                 case '4': // 4 key
-                    this.state = 'holdingPaper';
+                    Player.state = 'holdingPaper';
                     break;
             }
         });
@@ -28,13 +28,13 @@ export default class input{
             alert(event.key);
             switch (event.key){
                 case 'ArrowLeft': // left arrow key unheld
-                    if(player.speed < 0){
-                        player.stop();
+                    if(Player.speed < 0){
+                        Player.stop();
                     }
                     break;
                 case 'ArrowRight': // right arrow key unheld
-                    if (player.speed > 0){
-                        player.stop();
+                    if (Player.speed > 0){
+                        Player.stop();
                     }
                     break;
             }

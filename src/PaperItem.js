@@ -1,4 +1,4 @@
-export default class compostitem{
+export default class paperitem{
     constructor(){
         this.images = { //Just ideas not final
             'Paper': document.getElementById(),
