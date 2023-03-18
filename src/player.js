@@ -62,7 +62,6 @@ export default class Player {
         this.gameWidth=gameWidth;
         this.width=50;
         this.height=30;
-        this.friction=0;
         this.maxSpeed=30;
         this.minSpeed=10;
         this.speed=0;
@@ -77,12 +76,10 @@ export default class Player {
         if(this.prevSpeed>=0){
             //have to add this if just went right
             this.prevSpeed=-this.minSpeed;
-            this.friction=0;
         }
         if(this.prevSpeed>=-this.maxSpeed){
             //acceleration 
-            this.speed=this.prevSpeed*(1.1-this.friction);
-            this.friction+=0.01;
+            this.speed=this.prevSpeed*1.1;
             this.prevSpeed=this.speed;
         }
         //caps speed
@@ -93,12 +90,10 @@ export default class Player {
         if(this.prevSpeed<=0){
             //does this if just went left
             this.prevSpeed=this.minSpeed;
-            this.friction=0;
         }
         if(this.prevSpeed<=this.maxSpeed){
             //acceleration
-            this.speed=this.prevSpeed*(1.1-this.friction);
-            this.friction+=0.01;
+            this.speed=this.prevSpeed*1.1;
             this.prevSpeed=this.speed;
         }
         //caps speed
