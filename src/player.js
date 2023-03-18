@@ -60,10 +60,12 @@
 export default class Player {
     constructor(gameWidth, gameHeight){
         this.gameWidth=gameWidth;
-        this.width=150;
+        this.width=50;
         this.height=30;
-        this.maxSpeed=7;
+        this.maxSpeed=30;
+        this.minSpeed=10;
         this.speed=0;
+        this.prevSpeed=0;
         this.position={
             x: gameWidth / 2 - this.width / 2,
             y: gameHeight - this.height - 10
@@ -71,15 +73,36 @@ export default class Player {
     }
 
     moveLeft(){
-        this.speed=-this.maxSpeed;
+        if(this.prevSpeed>=0){
+            //have to add this if just went right
+            this.prevSpeed=-this.minSpeed;
+        }
+        if(this.prevSpeed>=-this.maxSpeed){
+            //acceleration 
+            this.speed=this.prevSpeed*1.1;
+            this.prevSpeed=this.speed;
+        }
+        //caps speed
+        else{this.speed=-this.maxSpeed;}
     }
 
     moveRight(){
-        this.speed=this.maxSpeed;
+        if(this.prevSpeed<=0){
+            //does this if just went left
+            this.prevSpeed=this.minSpeed;
+        }
+        if(this.prevSpeed<=this.maxSpeed){
+            //acceleration
+            this.speed=this.prevSpeed*1.1;
+            this.prevSpeed=this.speed;
+        }
+        //caps speed
+        else{this.speed=this.maxSpeed;}
     }
 
     stop(){
         this.speed=0;
+        this.prevSpeed=0;
     }
 
     draw(ctx){

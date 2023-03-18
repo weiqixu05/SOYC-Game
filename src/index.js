@@ -4,7 +4,7 @@ import Input from "./input.js"
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
 
-const GAME_WIDTH = 800;
+const GAME_WIDTH = 1000;
 const GAME_HEIGHT = 600;
 
 
@@ -20,7 +20,7 @@ function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
     lastTime=timestamp;
     //clears frame
-    ctx.clearRect(0, 0, 800,600);
+    ctx.clearRect(0, 0, 1000,600);
     //updates the player's movement
     player.update(deltaTime);
     player.draw(ctx);
