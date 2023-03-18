@@ -13,7 +13,7 @@ let player = new Player(GAME_WIDTH, GAME_HEIGHT);
 player.draw(ctx);
 
 let item = new ItemFunc(GAME_WIDTH,GAME_HEIGHT);
-item.draw(ctx)
+item.draw(ctx);
 
 let lastTime=0;
 
@@ -29,9 +29,7 @@ function gameLoop(timestamp){
     player.update(deltaTime);
     player.draw(ctx);
     //updates item 
-    item.update(deltaTime,player);
-    item.draw(ctx)
-
+    item.draw(ctx);
     //calls again
     requestAnimationFrame(gameLoop);
 }
