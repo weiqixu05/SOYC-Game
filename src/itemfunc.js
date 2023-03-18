@@ -15,10 +15,12 @@ export default class ItemFunc{
         this.speed = 5;
     }
     
-
-
     draw(ctx){
         
+    }
+
+    respawn(){
+
     }
 
     update(deltatime, player){
@@ -27,15 +29,13 @@ export default class ItemFunc{
         this.position.y  -= this.speed;
 
         if ((this.position.y - this.height / 2 <= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
-            //If item and box match up:
-                //item remove
-                //Score increase 
-            //Else:
-                //Lose Heart
-                //Remove from screen
+            if (player.state == this.state){
+                score += 1
+            }else{
+                hearts -= 1
+            }
         } else if (this.position.y - this.height/2 <= 0){
-            //Lose Heart
-            //Remove from screen
+            hearts -= 1
         }        
     }
 }

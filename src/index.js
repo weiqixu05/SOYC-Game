@@ -7,6 +7,9 @@ let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
 const GAME_WIDTH = 1000;
 const GAME_HEIGHT = 600;
 
+let hearts = 3;
+let score = 0
+
 
 let player = new Player(GAME_WIDTH, GAME_HEIGHT);
 player.draw(ctx);
