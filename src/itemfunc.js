@@ -16,11 +16,13 @@ export default class ItemFunc{
     }
     
     draw(ctx){
-        
+        ctx.fillStyle='#000ff';
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 
     respawn(){
         this.position.y = 600
+        this.position.x = Math.floor(Math.random() * 900)
     }
 
     update(deltatime, player){
@@ -31,11 +33,14 @@ export default class ItemFunc{
         if ((this.position.y - this.height / 2 <= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
             if (player.state == this.state){
                 score += 1
+                this.respawm()
             }else{
                 hearts -= 1
+                this.respawn()
             }
         } else if (this.position.y - this.height/2 <= 0){
             hearts -= 1
+            this.respawn
         }        
     }
 }
