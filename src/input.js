@@ -1,4 +1,4 @@
-export default class input{
+export default class Input{
     constructor(){
         document.addEventListener('keydown', (event) => {
             alert(event.key);

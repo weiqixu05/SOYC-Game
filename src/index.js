@@ -1,4 +1,5 @@
 import Bin from "./bin.js"
+import Input from "./input.js"
 
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
@@ -11,6 +12,8 @@ let bin = new Bin(GAME_WIDTH, GAME_HEIGHT);
 bin.draw(ctx);
 
 let lastTime=0;
+
+new Input();
 
 
 function gameLoop(timestamp){
