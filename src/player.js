@@ -89,9 +89,8 @@ export default class Player {
 
     update(deltaTime){
         if(!deltaTime){return;}
-
         this.position.x+=this.speed;
-
+        //boundaries
         if(this.position.x<0){this.position.x=0;}
         if(this.position.x+this.width>=this.gameWidth){this.position.x=this.gameWidth-this.width;}
     }
