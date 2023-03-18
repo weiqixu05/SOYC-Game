@@ -24,7 +24,7 @@ export default class ItemFunc{
 
         this.position.y  += this.speed;
 
-        if(this.position.y <= 0){this.position.y = 0;}
+        if(this.position.y >= 600){this.position.y = 0;}
 
     /*
         if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
