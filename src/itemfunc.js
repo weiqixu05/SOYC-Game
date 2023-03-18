@@ -15,7 +15,7 @@ export default class ItemFunc{
     }
 
    respawn(){
-        this.position.y = 600
+        this.position.y = 0
         this.position.x = Math.floor(Math.random() * 900)
     }
     
@@ -23,8 +23,11 @@ export default class ItemFunc{
         if (!deltatime) return;
 
         this.position.y  += this.speed;
+
+        if(this.position.y <= 0){this.position.y = 0;}
+
     /*
-        if ((this.position.y - this.height / 2 <= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
+        if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
             if (player.state == this.state){
                 score += 1
                 this.respawm()
@@ -32,9 +35,9 @@ export default class ItemFunc{
                 hearts -= 1
                 this.respawn()
             }
-        } else if (this.position.y - this.height/2 <= 0){
+        } else if (this.position.y - this.height/2 >= 600){
             hearts -= 1
             this.respawn
-        }*/        
+        }*/
     }
 }
