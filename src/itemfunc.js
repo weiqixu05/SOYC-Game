@@ -9,8 +9,8 @@ export default class ItemFunc{
         this.width = 10;
 
         this.position = {
-            x: Math.floor(Math.random() * 1500),
-            y: 1080
+            x: Math.floor(Math.random() * 900),
+            y: 600
         };
         this.speed = 5;
     }
@@ -20,7 +20,7 @@ export default class ItemFunc{
     }
 
     respawn(){
-
+        this.position.y = 600
     }
 
     update(deltatime, player){

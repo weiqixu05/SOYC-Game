@@ -1,5 +1,6 @@
 import Player from "./player.js"
 import Input from "./input.js"
+import ItemFunc from "./itemfunc.js";
 
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
@@ -27,6 +28,9 @@ function gameLoop(timestamp){
     //updates the player's movement
     player.update(deltaTime);
     player.draw(ctx);
+    //updates item 
+    ItemFunc.update(deltaTime,player);
+    ItemFunc.draw(ctx)
 
     //calls again
     requestAnimationFrame(gameLoop);
