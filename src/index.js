@@ -1,4 +1,4 @@
-import Bin from "./bin.js"
+import Player from "./player.js"
 import Input from "./input.js"
 
 let canvas=document.getElementById("gameScreen");
@@ -8,12 +8,12 @@ const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 
 
-let bin = new Bin(GAME_WIDTH, GAME_HEIGHT);
-bin.draw(ctx);
+let player = new Player(GAME_WIDTH, GAME_HEIGHT);
+player.draw(ctx);
 
 let lastTime=0;
 
-new Input();
+new Input(player);
 
 
 function gameLoop(timestamp){
@@ -21,9 +21,9 @@ function gameLoop(timestamp){
     lastTime=timestamp;
     //clears frame
     ctx.clearRect(0, 0, 800,600);
-    //updates the bins movement
-    bin.update(deltaTime);
-    bin.draw(ctx);
+    //updates the player's movement
+    player.update(deltaTime);
+    player.draw(ctx);
 
     //calls again
     requestAnimationFrame(gameLoop);

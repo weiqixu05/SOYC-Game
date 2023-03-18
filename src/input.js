@@ -1,13 +1,15 @@
+
+
 export default class Input{
-    constructor(){
+    constructor(player){
         document.addEventListener('keydown', (event) => {
             alert(event.key);
             switch (event.key){
                 case 'ArrowLeft': // left arrow key
-                    Player.moveLeft();
+                    player.moveLeft();
                     break;
                 case 'ArrowRight': // right arrow key
-                    Player.moveRight();
+                    player.moveRight();
                     break;
                 case '1': // 1 key
                     Player.state = 'holdingGarbage';
