@@ -30,6 +30,7 @@ function gameLoop(timestamp){
     player.draw(ctx);
     //updates item 
     item.draw(ctx);
+    item.update(deltaTime);
     //calls again
     requestAnimationFrame(gameLoop);
 }
