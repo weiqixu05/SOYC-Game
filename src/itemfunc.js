@@ -19,25 +19,29 @@ export default class ItemFunc{
         this.position.x = Math.floor(Math.random() * 900)
     }
     
-    update(deltatime){
+    update(deltatime, player){
         if (!deltatime) return;
 
         this.position.y  += this.speed;
 
-        if(this.position.y >= 600){this.position.y = 0;}
+        if(this.position.y >= 600){this.respawn();}
 
-    /*
-        if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
-            if (player.state == this.state){
-                score += 1
-                this.respawm()
-            }else{
-                hearts -= 1
-                this.respawn()
-            }
-        } else if (this.position.y - this.height/2 >= 600){
+    
+        if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2)&&(this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
+            this.respawn();}
+            
+  
+        /*} else if (this.position.y >= 600){
             hearts -= 1
             this.respawn
         }*/
     }
 }
+
+/*if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
+    if (player.state == this.state){
+        score += 1
+        this.respawn()
+    }else{
+        hearts -= 1
+        this.respawn()*/
