@@ -9,3 +9,21 @@ const GAME_HEIGHT = 600;
 
 let bin = new Bin(GAME_WIDTH, GAME_HEIGHT);
 bin.draw(ctx);
+
+let lastTime=0;
+
+
+function gameLoop(timestamp){
+    let deltaTime=timestamp-lastTime;
+    lastTime=timestamp;
+    //clears frame
+    ctx.clearRect(0, 0, 800,600);
+    //updates the bins movement
+    bin.update(deltaTime);
+    bin.draw(ctx);
+
+    //calls again
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
