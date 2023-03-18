@@ -3,7 +3,6 @@
 export default class Input{
     constructor(player){
         document.addEventListener('keydown', (event) => {
-            alert(event.key);
             switch (event.key){
                 case 'ArrowLeft': // left arrow key
                     player.moveLeft();
@@ -27,16 +26,15 @@ export default class Input{
         });
 
         document.addEventListener('keyup', (event) => {
-            alert(event.key);
             switch (event.key){
                 case 'ArrowLeft': // left arrow key unheld
-                    if(Player.speed < 0){
-                        Player.stop();
+                    if(player.speed < 0){
+                        player.stop();
                     }
                     break;
                 case 'ArrowRight': // right arrow key unheld
-                    if (Player.speed > 0){
-                        Player.stop();
+                    if (player.speed > 0){
+                        player.stop();
                     }
                     break;
             }
