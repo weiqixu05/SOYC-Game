@@ -20,13 +20,11 @@ export default class ItemFunc{
         ctx.fillText(this.hearts.toString(),105,30);
         ctx.fillText("Score: ", 30, 60);
         ctx.fillText(this.score.toString(), 100, 60);
-        //ctx.fillText()
-        //ctx.fillText(this,hearts, 10, 10);
     }
 
    respawn(){
-        this.position.y = 0
-        this.position.x = Math.floor(Math.random() * 900)
+        this.position.y = 0;
+        this.position.x = Math.floor(Math.random() * 900);
     }
 
     collide(player){
