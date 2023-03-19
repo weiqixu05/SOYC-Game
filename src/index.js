@@ -12,8 +12,12 @@ const GAME_HEIGHT = 600;
 let player = new Player(GAME_WIDTH, GAME_HEIGHT);
 player.draw(ctx);
 
-let item = new ItemFunc(GAME_WIDTH,GAME_HEIGHT);
+let item = new ItemFunc();
 item.draw(ctx);
+let item2 = new ItemFunc();
+item2.position.y = -300;
+let item3 = new ItemFunc();
+item3.position.y = -150
 
 let lastTime=0;
 
@@ -30,8 +34,18 @@ function gameLoop(timestamp){
     player.draw(ctx);
     //updates item 
     item.draw(ctx);
+    item.drawUi(ctx);
     item.update(deltaTime, player);
     //calls again
+    if (item.score >= 10){
+        item2.draw(ctx);
+        item2.update(deltaTime, player);
+    }
+    if (item.score >= 20){
+        item3.draw(ctx);
+        item3.update(deltaTime, player);
+    }
+    
     requestAnimationFrame(gameLoop);
 }
 

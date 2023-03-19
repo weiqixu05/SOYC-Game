@@ -1,5 +1,5 @@
 export default class ItemFunc{
-    constructor(gameWidth, gameHeight){
+    constructor(){
         this.height = 10;
         this.width = 10;
         this.speed = 5;
@@ -15,6 +15,8 @@ export default class ItemFunc{
     draw(ctx){
         ctx.fillStyle='0ff';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+    }
+    drawUi(ctx){
         ctx.font = "25px serif";
         ctx.fillText("Hearts: ", 30, 30);
         ctx.fillText(this.hearts.toString(),105,30);
