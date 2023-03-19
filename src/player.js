@@ -63,7 +63,7 @@ export default class Player {
         this.width=50;
         this.height=30;
         this.maxSpeed=30;
-        this.minSpeed=10;
+        this.minSpeed=7;
         this.speed=0;
         this.prevSpeed=0;
         this.position={

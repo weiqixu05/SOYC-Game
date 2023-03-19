@@ -18,6 +18,12 @@ export default class ItemFunc{
         this.position.y = 0
         this.position.x = Math.floor(Math.random() * 900)
     }
+
+    collide(player){
+        if((player.position.y<=this.position.y&&this.position.y<=player.position.y+player.height)&&(this.position.x+this.height>=player.position.x-3&&this.position.x<=player.position.x+player.width+3)){
+            return true;
+        }
+    }
     
     update(deltatime, player){
         if (!deltatime) return;
@@ -25,10 +31,10 @@ export default class ItemFunc{
         this.position.y  += this.speed;
 
         if(this.position.y >= 600){this.respawn();}
-
-    
-        if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2)&&(this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
-            this.respawn();}
+        
+       if(this.collide(player)){
+         this.respawn();
+       }
             
   
         /*} else if (this.position.y >= 600){
