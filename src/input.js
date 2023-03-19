@@ -11,16 +11,16 @@ export default class Input{
                     player.moveRight();
                     break;
                 case '1': // 1 key
-                    Player.state = 'holdingGarbage';
+                    player.chosenState = "1";
                     break;
                 case '2': // 2 key
-                    Player.state = 'holdingCompost';
+                    player.chosenState = "2";
                     break;
                 case '3': // 3 key
-                    Player.state = 'holdingPlastic';
+                    player.chosenState = "3";
                     break;
                 case '4': // 4 key
-                    Player.state = 'holdingPaper';
+                    player.chosenState = "4";
                     break;
             }
         });

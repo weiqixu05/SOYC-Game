@@ -60,8 +60,8 @@
 export default class Player {
     constructor(gameWidth, gameHeight){
         this.gameWidth=gameWidth;
-        this.width=50;
-        this.height=30;
+        this.width=100;
+        this.height=100;
         this.maxSpeed=30;
         this.minSpeed=7;
         this.speed=0;
@@ -70,6 +70,16 @@ export default class Player {
             x: gameWidth / 2 - this.width / 2,
             y: gameHeight - this.height - 10
         };
+
+        this.chosenState="1";
+
+        this.state={
+            "1":document.getElementById("black"),
+            "2":document.getElementById("green"),
+            "3":document.getElementById("purple"),
+            "4":document.getElementById("red")
+        }
+        this.img=this.state[this.chosenState];
     }
 
     moveLeft(){
@@ -106,8 +116,8 @@ export default class Player {
     }
 
     draw(ctx){
-        ctx.fillStyle='#0ff';
-        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        this.img=this.state[this.chosenState];
+        ctx.drawImage(this.img, this.position.x, this.position.y);
     }
 
     update(deltaTime){

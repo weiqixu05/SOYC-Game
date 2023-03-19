@@ -10,6 +10,7 @@ const GAME_HEIGHT = 600;
 
 
 let player = new Player(GAME_WIDTH, GAME_HEIGHT);
+player.chosenState="1";
 player.draw(ctx);
 
 let item = new ItemFunc();
