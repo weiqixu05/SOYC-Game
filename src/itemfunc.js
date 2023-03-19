@@ -62,10 +62,3 @@ export default class ItemFunc{
     }
 }
 
-/*if ((this.position.y - this.height / 2 >= player.position.y - player.height / 2) && (this.position.x >= player.position.x - player.width/2 && this.position.x <= player.position.x + player.width/2)){
-    if (player.state == this.state){
-        score += 1
-        this.respawn()
-    }else{
-        hearts -= 1
-        this.respawn()*/
