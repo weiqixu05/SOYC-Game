@@ -12,15 +12,43 @@ export default class Input{
                     break;
                 case '1': // 1 key
                     player.chosenState = "1";
+                    if(player.moveState===1){
+                        player.moveLeft();
+                    }
+                    else if(player.moveState===2){
+                        player.moveRight();
+                    }
+                    else{player.stop();}
                     break;
                 case '2': // 2 key
                     player.chosenState = "2";
+                    if(player.moveState===1){
+                        player.moveLeft();
+                    }
+                    else if(player.moveState===2){
+                        player.moveRight();
+                    }
+                    else{player.stop();}
                     break;
                 case '3': // 3 key
                     player.chosenState = "3";
+                    if(player.moveState===1){
+                        player.moveLeft();
+                    }
+                    else if(player.moveState===2){
+                        player.moveRight();
+                    }
+                    else{player.stop();}
                     break;
                 case '4': // 4 key
                     player.chosenState = "4";
+                    if(player.moveState===1){
+                        player.moveLeft();
+                    }
+                    else if(player.moveState===2){
+                        player.moveRight();
+                    }
+                    else{player.stop();}
                     break;
             }
         });

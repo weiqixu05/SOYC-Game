@@ -20,7 +20,10 @@ export default class Player {
             "3":document.getElementById("purple"),
             "4":document.getElementById("red")
         }
+
         this.img=this.state[this.chosenState];
+
+        this.moveState=0;
     }
 
     moveLeft(){
@@ -35,6 +38,7 @@ export default class Player {
         }
         //caps speed
         else{this.speed=-this.maxSpeed;}
+        this.moveState=1;
     }
 
     moveRight(){
@@ -49,11 +53,13 @@ export default class Player {
         }
         //caps speed
         else{this.speed=this.maxSpeed;}
+        this.moveState=2;
     }
 
     stop(){
         this.speed=0;
         this.prevSpeed=0;
+        this.moveState=0;
     }
 
     draw(ctx){
@@ -62,6 +68,7 @@ export default class Player {
     }
 
     update(deltaTime){
+        console.log(this.speed);
         if(!deltaTime){return;}
         this.position.x+=this.speed;
         //boundaries
