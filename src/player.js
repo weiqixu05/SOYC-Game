@@ -68,7 +68,6 @@ export default class Player {
     }
 
     update(deltaTime){
-        console.log(this.speed);
         if(!deltaTime){return;}
         this.position.x+=this.speed;
         //boundaries
