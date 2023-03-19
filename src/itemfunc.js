@@ -20,8 +20,6 @@ export default class ItemFunc{
         ctx.font = "25px serif";
         ctx.fillText("Hearts: ", 30, 30);
         ctx.fillText(this.hearts.toString(),105,30);
-        ctx.fillText("Score: ", 30, 60);
-        ctx.fillText(this.score.toString(), 100, 60);
     }
 
    respawn(){

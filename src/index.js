@@ -22,7 +22,7 @@ item3.position.y = -150
 let lastTime=0;
 
 new Input(player);
-
+let score;
 
 function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
@@ -33,9 +33,12 @@ function gameLoop(timestamp){
     player.update(deltaTime);
     player.draw(ctx);
     //updates item 
+    score=item.score+item2.score+item3.score;
     item.draw(ctx);
     item.drawUi(ctx);
     item.update(deltaTime, player);
+    ctx.fillText("Score: ", 30, 60);
+    ctx.fillText(score.toString(), 100, 60);
     //calls again
     if (item.score >= 10){
         item2.draw(ctx);
