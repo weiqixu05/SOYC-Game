@@ -36,6 +36,8 @@ function gameLoop(timestamp){
     item.draw(ctx);
     item.drawUi(ctx);
     item.update(deltaTime, player);
+    item.score += item2.score + item3.score;
+    item.hearts -= (item2.hearts - 3) + (item3.hearts -3)
     //calls again
     if (item.score >= 10){
         item2.draw(ctx);
