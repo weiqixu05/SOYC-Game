@@ -23,6 +23,7 @@ let lastTime=0;
 
 new Input(player);
 let score;
+let hearts;
 
 function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
@@ -34,11 +35,14 @@ function gameLoop(timestamp){
     player.draw(ctx);
     //updates item 
     score=item.score+item2.score+item3.score;
+    hearts=3-(9-item.hearts-item2.hearts-item3.hearts);
     item.draw(ctx);
     item.drawUi(ctx);
     item.update(deltaTime, player);
     ctx.fillText("Score: ", 30, 60);
     ctx.fillText(score.toString(), 100, 60);
+    ctx.fillText("Hearts: ", 30, 30);
+    ctx.fillText(hearts.toString(),105,30);
     //calls again
     if (item.score >= 10){
         item2.draw(ctx);

@@ -18,8 +18,6 @@ export default class ItemFunc{
     }
     drawUi(ctx){
         ctx.font = "25px serif";
-        ctx.fillText("Hearts: ", 30, 30);
-        ctx.fillText(this.hearts.toString(),105,30);
     }
 
    respawn(){
