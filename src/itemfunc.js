@@ -3,6 +3,9 @@ export default class ItemFunc{
         this.height = 10;
         this.width = 10;
         this.speed = 5;
+        this.count=1;
+        this.hearts=3;
+        this.score=0;
         this.position = {
             x: Math.floor(Math.random() * 900),
             y: 0
@@ -12,6 +15,13 @@ export default class ItemFunc{
     draw(ctx){
         ctx.fillStyle='0ff';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        ctx.font = "25px serif";
+        ctx.fillText("Hearts: ", 30, 30);
+        ctx.fillText(this.hearts.toString(),105,30);
+        ctx.fillText("Score: ", 30, 60);
+        ctx.fillText(this.score.toString(), 100, 60);
+        //ctx.fillText()
+        //ctx.fillText(this,hearts, 10, 10);
     }
 
    respawn(){
@@ -34,13 +44,14 @@ export default class ItemFunc{
         
        if(this.collide(player)){
          this.respawn();
+         this.score++;
        }
             
   
-        /*} else if (this.position.y >= 600){
-            hearts -= 1
-            this.respawn
-        }*/
+        else if (this.position.y >= player.position.y+player.height){
+            this.hearts--;
+            this.respawn();
+        }
     }
 }
 
