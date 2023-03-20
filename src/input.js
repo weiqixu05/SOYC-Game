@@ -1,7 +1,7 @@
 
 
 export default class Input{
-    constructor(player){
+    constructor(player, game){
         document.addEventListener('keydown', (event) => {
             switch (event.key){
                 case 'ArrowLeft': // left arrow key
@@ -50,6 +50,11 @@ export default class Input{
                     }
                     else{player.stop();}
                     break;
+                case ' ': // p key
+                    if(game.gameState==0){
+                        game.gameState=1;
+                    }
+                    else{game.gameState=0;}
             }
         });
 

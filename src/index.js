@@ -1,6 +1,7 @@
-import Player from "./player.js"
-import Input from "./input.js"
+import Player from "./player.js";
+import Input from "./input.js";
 import ItemFunc from "./itemfunc.js";
+import Game from "./game.js";
 
 let canvas=document.getElementById("gameScreen");
 let ctx=canvas.getContext("2d"); //context is what we use to draw on canvas
@@ -22,13 +23,19 @@ item3.position.y = -150
 
 let lastTime=0;
 
-new Input(player);
+let game=new Game();
+
+new Input(player, game);
 let score;
 let hearts;
 
 function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
     lastTime=timestamp;
+    if(game.gameState==1){
+        game.togglePause(ctx,GAME_WIDTH, GAME_HEIGHT);
+    }
+    else{
     //clears frame
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
     //updates the player's movement
@@ -40,6 +47,8 @@ function gameLoop(timestamp){
     item.draw(ctx);
     item.drawUi(ctx);
     item.update(deltaTime, player);
+    ctx.fillStyle="black";
+    ctx.textAlign="start";
     ctx.fillText("Score: ", 30, 60);
     ctx.fillText(score.toString(), 100, 60);
     ctx.fillText("Hearts: ", 30, 30);
@@ -53,6 +62,8 @@ function gameLoop(timestamp){
         item3.draw(ctx);
         item3.update(deltaTime, player);
     } 
+}
+
     
     requestAnimationFrame(gameLoop);
 }
