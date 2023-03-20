@@ -2,7 +2,7 @@ export default class ItemFunc{
     constructor(){
         this.height = 25;
         this.width = 25;
-        this.speed = 5;
+        this.speed = 3;
         this.count=1;
         this.hearts=3;
         this.score=0;
@@ -29,8 +29,8 @@ export default class ItemFunc{
     }
 
    respawn(){
-        this.position.y = 0;
-        this.position.x = Math.floor(Math.random() * 900);
+        this.position.y = this.position.y-600;//600 is gameheight
+        this.position.x = Math.floor(Math.random() * 1000);//1000 is gamewidth
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
     }
 
