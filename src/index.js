@@ -30,7 +30,7 @@ function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
     lastTime=timestamp;
     //clears frame
-    ctx.clearRect(0, 0, 1000,600);
+    ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
     //updates the player's movement
     player.update(deltaTime);
     player.draw(ctx);
@@ -52,7 +52,7 @@ function gameLoop(timestamp){
     if (item.score >= 20){
         item3.draw(ctx);
         item3.update(deltaTime, player);
-    }
+    } 
     
     requestAnimationFrame(gameLoop);
 }
