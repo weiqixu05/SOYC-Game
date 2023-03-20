@@ -12,8 +12,8 @@ export default class ItemFunc{
         };
         this.state={
             "1":document.getElementById("Banana Peel"),
-            "2":document.getElementById("green item"),
-            "3":document.getElementById("purple item"),
+            "2":document.getElementById("Water Bottle"),
+            "3":document.getElementById("Lined Paper"),
             "4":document.getElementById("red item")
         }
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
