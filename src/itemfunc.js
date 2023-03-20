@@ -11,7 +11,7 @@ export default class ItemFunc{
             y: 0
         };
         this.state={
-            "1":document.getElementById("black item"),
+            "1":document.getElementById("Banana Peel"),
             "2":document.getElementById("green item"),
             "3":document.getElementById("purple item"),
             "4":document.getElementById("red item")
