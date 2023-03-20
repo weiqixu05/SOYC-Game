@@ -50,11 +50,24 @@ export default class Input{
                     }
                     else{player.stop();}
                     break;
-                case ' ': // p key
-                    if(game.gameState==0){
-                        game.gameState=1;
+                case ' ': // spacebar
+                    if(game.gameState==="go"){
+                        game.gameState="pause";
                     }
-                    else{game.gameState=0;}
+                    break;
+                case 'Escape':
+                    if(game.gameState==="pause"){
+                        game.gameState="go";
+                    }
+                    break;
+                case 's':
+                    if(game.gameState==="startMenu"){
+                        game.gameState="go";
+                    }
+                    else if(game.gameState==="deathScreen"){
+                        game.gameState="startMenu";
+                    }
+                    break;
             }
         });
 

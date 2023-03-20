@@ -30,9 +30,27 @@ let score;
 let hearts;
 
 function gameLoop(timestamp){
+    if(game.gameState==="startMenu"){
+        game.startMenu(ctx,GAME_WIDTH,GAME_HEIGHT);
+        hearts=3;
+    }
+    else if(hearts==0){
+        game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT);
+        //resetting everything
+        item.score=0;
+        item2.score=0;
+        item3.score=0;
+        item.hearts=3;
+        item2.hearts=3;
+        item3.hearts=3;
+        score=0;
+        item.position.y=0;
+        item.position.x=Math.floor(Math.random() * 900);
+    }
+    else{
     let deltaTime=timestamp-lastTime;
     lastTime=timestamp;
-    if(game.gameState==1){
+    if(game.gameState==="pause"){
         game.togglePause(ctx,GAME_WIDTH, GAME_HEIGHT);
     }
     else{
@@ -64,7 +82,7 @@ function gameLoop(timestamp){
     } 
 }
 
-    
+}
     requestAnimationFrame(gameLoop);
 }
 
