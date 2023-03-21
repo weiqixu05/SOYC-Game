@@ -17,7 +17,7 @@ player.draw(ctx);
 let item = new ItemFunc();
 item.draw(ctx);
 let item2 = new ItemFunc();
-item2.position.y = -300;
+item2.position.y = item.position.y-(GAME_HEIGHT/2);
 let item3 = new ItemFunc();
 item3.position.y = -150
 
