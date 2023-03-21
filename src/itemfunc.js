@@ -12,9 +12,9 @@ export default class ItemFunc{
         };
         this.state={
             "1":document.getElementById("Banana Peel"),
-            "2":document.getElementById("Water Bottle"),
+            "2":document.getElementById("Water Bottle2"),
             "3":document.getElementById("Lined Paper"),
-            "4":document.getElementById("red item")
+            "4":document.getElementById("Plastic Straw")
         }
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
         this.img=this.state[this.currentState];
