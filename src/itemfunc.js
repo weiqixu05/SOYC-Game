@@ -11,8 +11,8 @@ export default class ItemFunc{
             y: 0
         };
         this.state={
-            "1":document.getElementById("Banana Peel"),
-            "2":document.getElementById("Water Bottle2"),
+            "1":document.getElementById("Apple Core"),
+            "2":document.getElementById("Tide Bottle"),
             "3":document.getElementById("Lined Paper"),
             "4":document.getElementById("Plastic Straw")
         }
