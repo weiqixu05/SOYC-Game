@@ -58,7 +58,7 @@ function gameLoop(timestamp){
     player.draw(ctx);
     //updates item 
     score=item.score+item2.score;
-    hearts=3-(9-item.hearts-item2.hearts);
+    hearts=3-(6-item.hearts-item2.hearts);
     item.draw(ctx);
     item.drawUi(ctx);
     item.update(deltaTime, player);
