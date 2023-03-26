@@ -11,17 +11,18 @@ export default class ItemFunc{
             y: 0
         };
         this.state={
-            "1":document.getElementById("Apple Core"),
-            "2":document.getElementById("Tide Bottle"),
-            "3":document.getElementById("Lined Paper"),
-            "4":document.getElementById("Plastic Straw")
+            "1":[document.getElementById("Apple Core"), document.getElementById("Banana Peel")],
+            "2":[document.getElementById("Tide Bottle"), document.getElementById("Water Bottle")],
+            "3":[document.getElementById("Lined Paper"), document.getElementById("purple item")],
+            "4":[document.getElementById("Plastic Straw"), document.getElementById("red item")]
         }
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
-        this.img=this.state[this.currentState];
+        this.subState=(Math.floor(Math.random() * 2));
+        this.img=this.state[this.currentState][this.subState];
     }
     
     draw(ctx){
-        this.img=this.state[this.currentState];
+        this.img=this.state[this.currentState][this.subState];
         ctx.drawImage(this.img, this.position.x, this.position.y);
     }
     drawUi(ctx){
@@ -32,6 +33,7 @@ export default class ItemFunc{
         this.position.y = this.position.y-600;//600 is gameheight
         this.position.x = Math.floor(Math.random() * 1000);//1000 is gamewidth
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
+        this.subState=(Math.floor(Math.random() * 2));
     }
 
     collide(player){
