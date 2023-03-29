@@ -15,7 +15,7 @@ export default class Player {
         this.chosenState="1";
 
         this.state={
-            "1":document.getElementById("black"),
+            "1":document.getElementById("HCG"),
             "2":document.getElementById("green"),
             "3":document.getElementById("purple"),
             "4":document.getElementById("red")
