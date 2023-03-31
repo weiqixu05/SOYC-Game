@@ -2,7 +2,7 @@ export default class Player {
     constructor(gameWidth, gameHeight){
         this.gameWidth=gameWidth;
         this.width=100;
-        this.height=100;
+        this.height=140;
         this.maxSpeed=30;
         this.minSpeed=7;
         this.speed=0;
@@ -12,21 +12,23 @@ export default class Player {
             y: gameHeight - this.height - 10
         };
 
-        this.chosenState="1";
+        this.chosenState="2";
+        this.imgState = 1;
 
         this.state={
-            "1":document.getElementById("HCG"),
-            "2":document.getElementById("green"),
-            "3":document.getElementById("purple"),
-            "4":document.getElementById("red")
+            "1":[document.getElementById("HCG"),document.getElementById("HCG")],
+            "2":[document.getElementById("green"),document.getElementById("green")],
+            "3":[document.getElementById("purple"),document.getElementById("purple")],
+            "4":[document.getElementById("GarbageR"), document.getElementById("GarbageL")]
         }
 
-        this.img=this.state[this.chosenState];
+        this.img=this.state[this.chosenState][this.imgState];
 
         this.moveState=0;
     }
 
     moveLeft(){
+        this.imgState = 1
         if(this.prevSpeed>=0){
             //have to add this if just went right
             this.prevSpeed=-this.minSpeed;
@@ -42,6 +44,7 @@ export default class Player {
     }
 
     moveRight(){
+        this.imgState=0
         if(this.prevSpeed<=0){
             //does this if just went left
             this.prevSpeed=this.minSpeed;
@@ -63,7 +66,7 @@ export default class Player {
     }
 
     draw(ctx){
-        this.img=this.state[this.chosenState];
+        this.img=this.state[this.chosenState][this.imgState];
         ctx.drawImage(this.img, this.position.x, this.position.y);
     }
 
