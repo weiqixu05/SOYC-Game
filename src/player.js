@@ -18,7 +18,7 @@ export default class Player {
         this.state={
             "1":[document.getElementById("CompostR"),document.getElementById("CompostL")],
             "2":[document.getElementById("RecyclingR"),document.getElementById("RecyclingL")],
-            "3":[document.getElementById("purple"),document.getElementById("purple")],
+            "3":[document.getElementById("PRecyclingR"),document.getElementById("PRecyclingL")],
             "4":[document.getElementById("GarbageR"), document.getElementById("GarbageL")]
         }
 
