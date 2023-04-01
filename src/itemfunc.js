@@ -12,7 +12,7 @@ export default class ItemFunc{
         };
         this.state={
             "1":[document.getElementById("Apple Core"), document.getElementById("Banana Peel")],
-            "2":[document.getElementById("Tide Bottle"), document.getElementById("New Water Bottle")],
+            "2":[document.getElementById("Tide Bottle"), document.getElementById("Water Bottle")],
             "3":[document.getElementById("Lined Paper"), document.getElementById("purple item")],
             "4":[document.getElementById("Plastic Straw"), document.getElementById("red item")]
         }
