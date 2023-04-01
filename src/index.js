@@ -70,6 +70,10 @@ function gameLoop(timestamp){
     ctx.fillText(hearts.toString(),105,30);
     //calls again
     if (item.score >= 10){
+        if(item2.position.y<item.position.y){
+            item2.position.y=item.position.y-GAME_HEIGHT/2;
+        }
+        else{item2.position.y=item.position.y+GAME_HEIGHT/2;}
         item2.draw(ctx);
         item2.update(deltaTime, player);
     }
