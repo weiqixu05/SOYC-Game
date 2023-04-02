@@ -65,10 +65,20 @@ function gameLoop(timestamp){
     item.update(deltaTime, player);
     ctx.fillStyle="black";
     ctx.textAlign="start";
-    ctx.fillText("Score: ", 30, 60);
-    ctx.fillText(score.toString(), 100, 60);
-    ctx.fillText("Hearts: ", 30, 30);
-    ctx.fillText(hearts.toString(),105,30);
+    ctx.fillText("Score: ", 20, 30);
+    ctx.fillText(score.toString(), 90, 30);
+    if (hearts==3){
+        ctx.drawImage(document.getElementById('Heart'), 850, 0)
+        ctx.drawImage(document.getElementById('Heart'), 900, 0)
+        ctx.drawImage(document.getElementById('Heart'), 950, 0)
+    }
+    else if (hearts==2){
+        ctx.drawImage(document.getElementById('Heart'), 900, 0)
+        ctx.drawImage(document.getElementById('Heart'), 950, 0)
+    }
+    else if (hearts==1){
+        ctx.drawImage(document.getElementById('Heart'), 950, 0)
+    }
     //calls again
     if (item.score >= 10){
         if(item2.position.y<item.position.y){
