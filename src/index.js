@@ -41,7 +41,7 @@ function gameLoop(timestamp){
         item2.hearts=3;
         score=0;
         item.position.y=0;
-        item.position.x=Math.floor(Math.random() * 900);
+        item.position.x=Math.floor(Math.random() * (900 - 100) + 100);
         item2.position.y=item.position.y-300;
     }
     else{
