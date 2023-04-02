@@ -17,7 +17,7 @@ export default class ItemFunc{
             "4":[document.getElementById("Plastic Straw"), document.getElementById("Candy Wrapper"), document.getElementById("Mug"), document.getElementById("Plastic Bag")]
         }
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
-        this.subState=(Math.floor(Math.random() * 2));
+        this.subState=(Math.floor(Math.random() * 4));
         this.img=this.state[this.currentState][this.subState];
     }
     
@@ -33,7 +33,7 @@ export default class ItemFunc{
         this.position.y = this.position.y-600;//600 is gameheight
         this.position.x = Math.floor(Math.random() * (900 - 100) + 100);//spawns between x=100 and x=900
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
-        this.subState=(Math.floor(Math.random() * 2));
+        this.subState=(Math.floor(Math.random() * 4));
         //console.log(this.currentState, ' ', this.subState, ' ', this.position.x);
     }
 
