@@ -7,13 +7,13 @@ export default class ItemFunc{
         this.hearts=3;
         this.score=0;
         this.position = {
-            x: Math.floor(Math.random() * 900),
+            x: Math.floor(Math.random() * (850 - 100) + 100),
             y: 0
         };
         this.state={
             "1":[document.getElementById("Apple Core"), document.getElementById("Banana Peel")],
             "2":[document.getElementById("Tide Bottle"), document.getElementById("Water Bottle")],
-            "3":[document.getElementById("Lined Paper"), document.getElementById("purple item")],
+            "3":[document.getElementById("Lined Paper"), document.getElementById("Newspaper")],
             "4":[document.getElementById("Plastic Straw"), document.getElementById("red item")]
         }
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
@@ -31,9 +31,10 @@ export default class ItemFunc{
 
    respawn(){
         this.position.y = this.position.y-600;//600 is gameheight
-        this.position.x = Math.floor(Math.random() * 1000);//1000 is gamewidth
+        this.position.x = Math.floor(Math.random() * (900 - 100) + 100);//spawns between x=100 and x=900
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
         this.subState=(Math.floor(Math.random() * 2));
+        //console.log(this.currentState, ' ', this.subState, ' ', this.position.x);
     }
 
     collide(player){
@@ -55,6 +56,7 @@ export default class ItemFunc{
        else if(this.collide(player)&&player.chosenState!==this.currentState){
             this.respawn();
             this.hearts--;
+            //console.log(this.currentState, ' ', this.subState, ' ', this.position.x);
        }
        
         else if (this.position.y >= player.position.y+player.height){
