@@ -53,6 +53,7 @@ function gameLoop(timestamp){
     else{
     //clears frame
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+    ctx.drawImage(document.getElementById('Background'), 0, 0)
     //updates the player's movement
     player.update(deltaTime);
     player.draw(ctx);
