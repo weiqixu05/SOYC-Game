@@ -12,7 +12,7 @@ export default class ItemFunc{
         };
         this.state={
             "1":[document.getElementById("Apple Core"), document.getElementById("Banana Peel"), document.getElementById("Rose"), document.getElementById("Pumpkin")],
-            "2":[document.getElementById("Tide Bottle"), document.getElementById("Water Bottle"), document.getElementById("Glass Jar"), document.getElementById("Pop Can")],
+            "2":[document.getElementById("Orange Bottle"), document.getElementById("Water Bottle"), document.getElementById("Glass Jar"), document.getElementById("Pop Can")],
             "3":[document.getElementById("Lined Paper"), document.getElementById("Newspaper"), document.getElementById("Envelope"), document.getElementById("Box")],
             "4":[document.getElementById("Plastic Straw"), document.getElementById("Candy Wrapper"), document.getElementById("Mug"), document.getElementById("Plastic Bag")]
         }
