@@ -25,7 +25,7 @@ export default class Game{
         ctx.fillText("Press S to Start Game", GAME_WIDTH/2,GAME_HEIGHT/2);
     }
 
-    deathScreen(ctx, GAME_WIDTH, GAME_HEIGHT){
+    deathScreen(ctx, GAME_WIDTH, GAME_HEIGHT,lastscore){
         this.gameState="deathScreen";
         ctx.rect(0,0,GAME_WIDTH,GAME_HEIGHT);
         ctx.fillStyle="black";
@@ -33,7 +33,9 @@ export default class Game{
         ctx.font="30px Arial";
         ctx.fillStyle="white";
         ctx.textAlign="center";
+        let score = lastscore.toString()
         ctx.fillText("You Died. Press S to go back to start menu", GAME_WIDTH/2,GAME_HEIGHT/2);
+        ctx.fillText("Score: " + score, GAME_WIDTH/2,GAME_HEIGHT/2+50);
     }
 }
 

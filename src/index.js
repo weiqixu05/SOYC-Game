@@ -31,15 +31,16 @@ function gameLoop(timestamp){
     if(game.gameState==="startMenu"){
         game.startMenu(ctx,GAME_WIDTH,GAME_HEIGHT);
         hearts=3;
+        score=0;
     }
     else if(hearts==0){
-        game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT);
+        let lastscore = score
+        game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT,lastscore);
         //resetting everything
         item.score=0;
         item2.score=0;
         item.hearts=3;
         item2.hearts=3;
-        score=0;
         item.position.y=0;
         item.position.x=Math.floor(Math.random() * (900 - 100) + 100);
         item2.position.y=item.position.y-300;
