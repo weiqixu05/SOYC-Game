@@ -2,7 +2,7 @@ export default class ItemFunc{
     constructor(){
         this.height = 25;
         this.width = 25;
-        this.speed = 3;
+        this.speed = 175;
         this.count=1;
         this.hearts=3;
         this.score=0;
@@ -48,7 +48,7 @@ export default class ItemFunc{
     
     update(deltatime, player){
         if (!deltatime) return;
-        this.position.y  += this.speed;
+        this.position.y  += this.speed*deltatime/1000;
     
        if(this.collide(player)&&player.chosenState===this.currentState){
             this.respawn();

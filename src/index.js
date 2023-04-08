@@ -28,6 +28,8 @@ let score;
 let hearts;
 
 function gameLoop(timestamp){
+    let deltaTime=timestamp-lastTime;
+    lastTime=timestamp;
     if(game.gameState==="startMenu"){
         game.startMenu(ctx,GAME_WIDTH,GAME_HEIGHT);
         hearts=3;
@@ -47,8 +49,6 @@ function gameLoop(timestamp){
         item2.position.y=item.position.y-300;
     }
     else{
-    let deltaTime=timestamp-lastTime;
-    lastTime=timestamp;
     if(game.gameState==="pause"){
         game.togglePause(ctx,GAME_WIDTH, GAME_HEIGHT);
     }
