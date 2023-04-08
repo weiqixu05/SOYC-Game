@@ -34,7 +34,7 @@ export default class Game{
         ctx.fillStyle="white";
         ctx.textAlign="center";
         let score = lastscore.toString()
-        ctx.fillText("You Died. Press S to go back to start menu", GAME_WIDTH/2,GAME_HEIGHT/2);
+        ctx.fillText("You Lost. Press S to go back to start menu", GAME_WIDTH/2,GAME_HEIGHT/2);
         ctx.fillText("Score: " + score, GAME_WIDTH/2,GAME_HEIGHT/2+50);
     }
 }
