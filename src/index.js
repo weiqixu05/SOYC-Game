@@ -36,6 +36,7 @@ function gameLoop(timestamp){
     else if(hearts==0){
         let lastscore = score
         game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT,lastscore);
+        item.lossSound.play();
         //resetting everything
         item.score=0;
         item2.score=0;

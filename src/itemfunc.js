@@ -20,7 +20,8 @@ export default class ItemFunc{
         this.subState=(Math.floor(Math.random() * 4));
         this.img=this.state[this.currentState][this.subState];
 
-        this.scoreSound = document.getElementById('scoreSound');
+        this.scoreSound = document.getElementById("scoreSound");
+        this.lossSound = document.getElementById("lossSound");
     }
     
     draw(ctx){
@@ -50,15 +51,14 @@ export default class ItemFunc{
         this.position.y  += this.speed;
     
        if(this.collide(player)&&player.chosenState===this.currentState){
-            this.scoreSound.play();
             this.respawn();
             this.score++;
+            this.scoreSound.play();
        }
        
        else if(this.collide(player)&&player.chosenState!==this.currentState){
             this.respawn();
             this.hearts--;
-            //console.log(this.currentState, ' ', this.subState, ' ', this.position.x);
        }
        
         else if (this.position.y >= player.position.y+player.height){
