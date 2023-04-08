@@ -3,8 +3,8 @@ export default class Player {
         this.gameWidth=gameWidth;
         this.width=100;
         this.height=140;
-        this.maxSpeed=30;
-        this.minSpeed=7;
+        this.maxSpeed=1500;
+        this.minSpeed=400;
         this.speed=0;
         this.prevSpeed=0;
         this.position={
@@ -12,8 +12,8 @@ export default class Player {
             y: gameHeight - this.height - 10
         };
 
-        this.chosenState="2";
-        this.imgState = 1;
+        this.chosenState=(Math.floor(Math.random() * 4) + 1).toString();
+        this.imgState = (Math.floor(Math.random() * 2));;
 
         this.state={
             "1":[document.getElementById("CompostR"),document.getElementById("CompostL")],
@@ -72,7 +72,7 @@ export default class Player {
 
     update(deltaTime){
         if(!deltaTime){return;}
-        this.position.x+=this.speed;
+        this.position.x+=this.speed*deltaTime/1000;
         //boundaries
         if(this.position.x<0){this.position.x=0;}
         if(this.position.x+this.width>=this.gameWidth){this.position.x=this.gameWidth-this.width;}
