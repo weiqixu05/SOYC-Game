@@ -54,9 +54,7 @@ export default class Input{
                     if(game.gameState==="go"){
                         game.gameState="pause";
                     }
-                    break;
-                case 'Escape':
-                    if(game.gameState==="pause"){
+                    else if(game.gameState==="pause"){
                         game.gameState="go";
                     }
                     break;

@@ -11,7 +11,7 @@ export default class Game{
         ctx.fillStyle="white";
         ctx.textAlign="center";
         ctx.fillText("Paused", GAME_WIDTH/2,(GAME_HEIGHT/2)-50);
-        ctx.fillText("Press escape key to Continue", GAME_WIDTH/2, (GAME_HEIGHT/2)+50);
+        ctx.fillText("Press space key to Continue", GAME_WIDTH/2, (GAME_HEIGHT/2)+50);
     }
 
     startMenu(ctx, GAME_WIDTH, GAME_HEIGHT){
