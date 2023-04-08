@@ -19,6 +19,8 @@ export default class ItemFunc{
         this.currentState=(Math.floor(Math.random() * 4) + 1).toString();
         this.subState=(Math.floor(Math.random() * 4));
         this.img=this.state[this.currentState][this.subState];
+
+        this.scoreSound = document.getElementById('scoreSound');
     }
     
     draw(ctx){
@@ -45,10 +47,10 @@ export default class ItemFunc{
     
     update(deltatime, player){
         if (!deltatime) return;
-
         this.position.y  += this.speed;
-        
+    
        if(this.collide(player)&&player.chosenState===this.currentState){
+            this.scoreSound.play();
             this.respawn();
             this.score++;
        }
