@@ -22,6 +22,7 @@ export default class ItemFunc{
 
         this.scoreSound = document.getElementById("scoreSound");
         this.lossSound = document.getElementById("lossSound");
+        this.heartSound = document.getElementById('heartSound');
     }
     
     draw(ctx){
@@ -59,11 +60,14 @@ export default class ItemFunc{
        else if(this.collide(player)&&player.chosenState!==this.currentState){
             this.respawn();
             this.hearts--;
+            this.heartSound.play();
+
        }
        
         else if (this.position.y >= player.position.y+player.height){
             this.hearts--;
             this.respawn();
+            this.heartSound.play();
         }
     }
 }
