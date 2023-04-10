@@ -2,7 +2,6 @@ export default class Game{
     constructor(){
         this.gameState="startMenu";
     }
-
     togglePause(ctx, GAME_WIDTH, GAME_HEIGHT){
         ctx.rect(0,0,GAME_WIDTH,GAME_HEIGHT);
         ctx.fillStyle="black";
