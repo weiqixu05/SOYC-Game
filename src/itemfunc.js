@@ -6,6 +6,7 @@ export default class ItemFunc{
         this.count=1;
         this.hearts=3;
         this.score=0;
+        this.played=false;
         this.position = {
             x: Math.floor(Math.random() * (850 - 100) + 100),
             y: 0

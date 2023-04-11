@@ -34,11 +34,15 @@ function gameLoop(timestamp){
         game.startMenu(ctx,GAME_WIDTH,GAME_HEIGHT);
         hearts=3;
         score=0;
+        item.played=false;
     }
     else if(hearts==0){
         let lastscore = score
         game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT,lastscore);
-        item.lossSound.play();
+        if(item.played==false){
+            item.played=true;
+            item.lossSound.play();
+        }
         //resetting everything
         item.score=0;
         item2.score=0;
@@ -48,8 +52,7 @@ function gameLoop(timestamp){
         item.position.x=Math.floor(Math.random() * (900 - 100) + 100);
         item2.position.y=item.position.y-300;
     }
-    else{
-    if(game.gameState==="pause"){
+    else if(game.gameState==="pause"){
         game.togglePause(ctx,GAME_WIDTH, GAME_HEIGHT);
     }
     else{
@@ -92,7 +95,7 @@ function gameLoop(timestamp){
     }
 }
 
-}
+
     requestAnimationFrame(gameLoop);
 }
 
