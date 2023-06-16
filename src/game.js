@@ -1,6 +1,6 @@
 export default class Game{
     constructor(){
-        this.gameState="startMenu";
+        this.gameState="introScreen";
     }
     togglePause(ctx, GAME_WIDTH, GAME_HEIGHT){
         ctx.rect(0,0,GAME_WIDTH,GAME_HEIGHT);
@@ -22,6 +22,18 @@ export default class Game{
         ctx.fillStyle="white";
         ctx.textAlign="center";
         ctx.fillText("Press S to Start Game", GAME_WIDTH/2,GAME_HEIGHT/2);
+    }
+
+    introScreen(ctx, GAME_WIDTH, GAME_HEIGHT){
+        ctx.rect(0,0,GAME_WIDTH,GAME_HEIGHT);
+        //ctx.rect((GAME_WIDTH/2)-150,(GAME_HEIGHT/2)-60,300,120);
+        ctx.fillStyle="black";
+        ctx.fill();
+        ctx.font="30px Arial";
+        ctx.fillStyle="white";
+        ctx.textAlign="center";
+        ctx.fillText("Welcome to the SOYC Video Game", GAME_WIDTH/2,(GAME_HEIGHT/2)-25);
+        ctx.fillText("Press S to Continue", GAME_WIDTH/2, (GAME_HEIGHT/2)+25);
     }
 
     deathScreen(ctx, GAME_WIDTH, GAME_HEIGHT,lastscore){

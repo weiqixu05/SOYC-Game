@@ -30,7 +30,10 @@ let hearts;
 function gameLoop(timestamp){
     let deltaTime=timestamp-lastTime;
     lastTime=timestamp;
-    if(game.gameState==="startMenu"){
+    if(game.gameState==="introScreen"){
+        game.introScreen(ctx,GAME_WIDTH,GAME_HEIGHT);
+    }
+    else if(game.gameState==="startMenu"){
         game.startMenu(ctx,GAME_WIDTH,GAME_HEIGHT);
         hearts=3;
         score=0;

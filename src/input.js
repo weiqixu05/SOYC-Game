@@ -65,6 +65,9 @@ export default class Input{
                     else if(game.gameState==="deathScreen"){
                         game.gameState="startMenu";
                     }
+                    else if(game.gameState==="introScreen"){
+                        game.gameState="startMenu";
+                    }
                     break;
             }
         });
