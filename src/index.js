@@ -39,6 +39,9 @@ function gameLoop(timestamp){
         score=0;
         item.played=false;
     }
+    else if(game.gameState==="instructionScreen"){
+        game.instructionScreen(ctx,GAME_WIDTH,GAME_HEIGHT);
+    }
     else if(hearts==0){
         let lastscore = score
         game.deathScreen(ctx,GAME_WIDTH,GAME_HEIGHT,lastscore);

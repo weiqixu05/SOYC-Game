@@ -59,7 +59,7 @@ export default class Input{
                     }
                     break;
                 case 's':
-                    if(game.gameState==="startMenu"){
+                    if(game.gameState==="startMenu"||game.gameState==="instructionScreen"){
                         game.gameState="go";
                     }
                     else if(game.gameState==="deathScreen"){
@@ -67,6 +67,11 @@ export default class Input{
                     }
                     else if(game.gameState==="introScreen"){
                         game.gameState="startMenu";
+                    }
+                    break;
+                case 'i':
+                    if(game.gameState==="startMenu"){
+                        game.gameState="instructionScreen";
                     }
                     break;
             }
