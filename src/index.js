@@ -78,6 +78,9 @@ function gameLoop(timestamp){
     ctx.textAlign="start";
     ctx.fillText("Score: ", 20, 30);
     ctx.fillText(score.toString(), 90, 30);
+    ctx.font="bold 20px sans-serif";
+    ctx.fillText("1: Compost;   2: Plastic Recycling;   3: Paper Recycling;   4: Garbage", 140, 30);
+    ctx.textAlign="center";
     if (hearts==3){
         ctx.drawImage(document.getElementById('Heart'), 850, 0)
         ctx.drawImage(document.getElementById('Heart'), 900, 0)
